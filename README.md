@@ -13,7 +13,7 @@ In this work was used a particular kind of [Transformer](https://builtin.com/art
 
 The Main Structure of the Network is shown below.
 
-<img src="images/EC_CfC.jpg" width=1000>
+<img src="images/EC_CfC.jpg" align="left">
 
 Focusing on the Encoder part, it is composed by a connection between a [LSTM](https://pytorch.org/docs/stable/generated/torch.nn.LSTM.html) Layer and a [CfC](https://www.nature.com/articles/s42256-022-00556-7) Layer wired with [NCP](https://publik.tuwien.ac.at/files/publik_292280.pdf) policy. This part differs from [CfC for Material Science](https://github.com/Marcelaus98/CfC-for-Material-Science), it misses the Multi-Head Attention Layer and the Encoder block here is not repeted more than once. Technically it was possible to implement such architecture, but the accuracy was good even with this simpler structure, so it wasn't necessary a more complex one.
 
