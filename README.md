@@ -54,7 +54,7 @@ The structure is shown below.
 <img src="images/Encoder2.jpg" width=1000>
 
 
-Lastly after the Encoder Layers, the *hidden* and the *cell* state are passed in a CfC Decoder and are used to initialize it. At this point the last data entry of the *T* long input sequence is used to generate the **output**
+Lastly after the Encoder Layers, the *hidden* and the *cell* state are passed in a Decoder composed by a series of LSTM+CfC+FCN and are used to initialize it. At this point the last data entry of the *T* long input sequence is used to generate the **output**
 
 ## Contributing
 
