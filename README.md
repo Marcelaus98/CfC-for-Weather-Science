@@ -51,7 +51,7 @@ It is important to mention that in this Network, given a sequence of lenght *T* 
 After this **First Encoder**, the **Compressed Information** is combined with the sequence of *T-1* previous known observations in a second **different** Encoder. In this layer the **Compressed Information** retrieved from the first Encoder it is used to perform an attention mechanism on the previous *hidden state* and *cell state* of the **Second Encoder**. The **Context** information retrieved is concatenated with the *T-1* long sequence of previous known observations and the retrieved tensor is fed to a series of LSTM and CfC Cells that output the next *hidden* and *cell* state of the **Encoder 2** block.
 The structure is shown below.
 
-<img src="images/Encoder2.jpg" width=1000 height=500>
+<img src="images/Encoder2.jpg" width=1000>
 
 
 Lastly after the Encoder Layers, the *hidden* and the *cell* state are passed in a CfC Decoder and are used to initialize it. At this point the last data entry of the *T* long input sequence is used to generate the **output**
