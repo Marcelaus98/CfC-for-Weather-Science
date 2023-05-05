@@ -13,7 +13,7 @@ In this work was used a particular kind of [Transformer](https://builtin.com/art
 
 The Main Structure of the Network is shown below.
 
-<img src="images/EC_CfC.jpg" align="left">
+<img src="images/EC_CfC.jpg">
 
 Focusing on the Encoder part, it is composed by a connection between a [LSTM](https://pytorch.org/docs/stable/generated/torch.nn.LSTM.html) Layer and a [CfC](https://www.nature.com/articles/s42256-022-00556-7) Layer wired with [NCP](https://publik.tuwien.ac.at/files/publik_292280.pdf) policy. This part differs from [CfC for Material Science](https://github.com/Marcelaus98/CfC-for-Material-Science), it misses the Multi-Head Attention Layer and the Encoder block here is not repeted more than once. Technically it was possible to implement such architecture, but the accuracy was good even with this simpler structure, so it wasn't necessary a more complex one.
 
@@ -51,7 +51,7 @@ It is important to mention that in this Network, given a sequence of lenght *T* 
 After this **First Encoder**, the **Compressed Information** is combined with the sequence of *T-1* previous known observations in a second **different** Encoder. In this layer the **Compressed Information** retrieved from the first Encoder it is used to perform an attention mechanism on the previous *hidden state* and *cell state* of the **Second Encoder**. The **Context** information retrieved is concatenated with the *T-1* long sequence of previous known observations and the retrieved tensor is fed to a series of LSTM and CfC Cells that output the next *hidden* and *cell* state of the **Encoder 2** block.
 The structure is shown below.
 
-<img src="images/Encoder_2.jpg" width=1000 height=500>
+<img src="images/Encoder2.jpg" width=1000 height=500>
 
 
 Lastly after the Encoder Layers, the *hidden* and the *cell* state are passed in a CfC Decoder and are used to initialize it. At this point the last data entry of the *T* long input sequence is used to generate the **output**
